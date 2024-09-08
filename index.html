@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>台美股市觀測</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 10px;
+        }
+        h1 {
+            font-size: 24px;
+            text-align: center;
+        }
+        #data-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        #data-table th, #data-table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        #data-table th {
+            background-color: #000;
+            color: #fff;
+        }
+        #data-table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        @media screen and (max-width: 600px) {
+            #data-table, #data-table tbody, #data-table tr, #data-table td {
+                display: block;
+            }
+            #data-table thead {
+                display: none;
+            }
+            #data-table tr {
+                margin-bottom: 10px;
+            }
+            #data-table td {
+                border: none;
+                position: relative;
+                padding-left: 50%;
+            }
+            #data-table td:before {
+                content: attr(data-label);
+                position: absolute;
+                left: 6px;
+                width: 45%;
+                padding-right: 10px;
+                white-space: nowrap;
+                font-weight: bold;
+                color: #000;
+            }
+            #data-table tr:nth-child(even) {
+                background-color: transparent;
+            }
+            #data-table tr:nth-child(4n+1), #data-table tr:nth-child(4n+2) {
+                background-color: #f9f9f9;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>台美股市觀測</h1>
+    <table id="data-table">
+        <thead>
+            <tr>
+                <th>地區</th>
+                <th>類別</th>
+                <th>股票代號</th>
+                <th>股票名稱</th>
+                <th>收盤價</th>
+                <th>漲跌</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+    <script src="script.js"></script>
+</body>
+</html>
