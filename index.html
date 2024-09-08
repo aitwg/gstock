@@ -18,6 +18,7 @@
         #data-table {
             width: 100%;
             border-collapse: collapse;
+            font-size: 14px;
         }
         #data-table th, #data-table td {
             border: 1px solid #ddd;
@@ -32,55 +33,38 @@
             background-color: #f9f9f9;
         }
         @media screen and (max-width: 600px) {
-            #data-table, #data-table tbody, #data-table tr, #data-table td {
-                display: block;
+            #data-table {
+                font-size: 12px;
             }
-            #data-table thead {
+            #data-table th, #data-table td {
+                padding: 5px;
+            }
+            #data-table th:nth-child(1),
+            #data-table td:nth-child(1),
+            #data-table th:nth-child(2),
+            #data-table td:nth-child(2) {
                 display: none;
-            }
-            #data-table tr {
-                margin-bottom: 10px;
-            }
-            #data-table td {
-                border: none;
-                position: relative;
-                padding-left: 50%;
-            }
-            #data-table td:before {
-                content: attr(data-label);
-                position: absolute;
-                left: 6px;
-                width: 45%;
-                padding-right: 10px;
-                white-space: nowrap;
-                font-weight: bold;
-                color: #000;
-            }
-            #data-table tr:nth-child(even) {
-                background-color: transparent;
-            }
-            #data-table tr:nth-child(4n+1), #data-table tr:nth-child(4n+2) {
-                background-color: #f9f9f9;
             }
         }
     </style>
 </head>
 <body>
     <h1>台美股市觀測</h1>
-    <table id="data-table">
-        <thead>
-            <tr>
-                <th>地區</th>
-                <th>類別</th>
-                <th>股票代號</th>
-                <th>股票名稱</th>
-                <th>收盤價</th>
-                <th>漲跌</th>
-            </tr>
-        </thead>
-        <tbody></tbody>
-    </table>
-
+    <div style="overflow-x: auto;">
+        <table id="data-table">
+            <thead>
+                <tr>
+                    <th>地區</th>
+                    <th>類別</th>
+                    <th>股票代號</th>
+                    <th>股票名稱</th>
+                    <th>收盤價</th>
+                    <th>漲跌</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
     <script src="script.js"></script>
 </body>
 </html>
